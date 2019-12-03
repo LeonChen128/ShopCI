@@ -1,0 +1,111 @@
+.bodycolor {
+  background: rgba(240, 240, 240, 1);
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(239, 97, 52, 1);
+}
+
+.headerWord {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 30px;
+  margin-left: 20px;
+}
+
+.headerWord:hover {
+  background: rgba(162, 51, 15, 1)
+}
+
+.loginTable {
+  width: 350px;
+  height: 400px;
+  padding: 25px;
+  background: white;
+  margin: 60px auto;
+  border-radius: 3px;
+  border: 1px solid rgba(220, 220, 220, 1);
+  box-shadow: 5px 5px 0px 0px rgba(200, 200, 200, 1);
+}
+
+.memberLogin {
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.inputTable {
+ width: 100%;
+ height: 40px;
+ margin-top: 15px;
+ border: 1px solid rgba(220, 220, 220, 1);
+ border-radius: 3px;
+ font-size: 16px;
+}
+
+.sumitButton {
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(55, 147, 220, 1);
+  font-size: 16px;
+  margin: 20px 0 0 0;
+}
+
+.sumitButton:hover {
+  background: rgba(30, 114, 181, 1);
+}
+
+.sumitButtonWord {
+  color: white;
+}
+
+.resetButton {
+  width: 120px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(255, 152, 0, 1);
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  float: right;
+}
+
+.resetButton:hover {
+  background: rgba(222, 135, 7, 1)
+}
+
+.memberNotYet {
+  display: inline-block;
+  margin: 40px 5px 0 80px;
+}
+
+.joinMember {
+  text-decoration: none;
+  color: rgba(36, 140, 222, 1);
+}
+
+.joinMember:hover {
+  color: rgba(0, 19, 247, 1);
+}
+
+.registerTable {
+  width: 350px;
+  height: 430px;
+  padding: 25px;
+  background: white;
+  margin: 60px auto;
+  border-radius: 3px;
+  border: 1px solid rgba(220, 220, 220, 1);
+  box-shadow: 5px 5px 0px 0px rgba(200, 200, 200, 1);
+}
