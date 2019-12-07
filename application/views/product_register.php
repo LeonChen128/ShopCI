@@ -7,7 +7,7 @@
 <div class="registerTable">
   <h1 class="memberLogin">會員註冊</h1>
   <div>
-    <form action="<?= base_url('index.php/product/checkRegister')?>" method="post">
+    <form action="<?= base_url('index.php/product/registerUser')?>" method="post">
       <input type="text" name="name" placeholder="輸入名稱.." class="inputTable">
       <input type="text" name="account" placeholder="輸入帳號.." class="inputTable">
       <input type="password" name="password" placeholder="輸入密碼.." class="inputTable">
