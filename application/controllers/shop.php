@@ -17,4 +17,19 @@ class Shop extends CI_Controller {
       'query' => $query
     ]);
   }
+
+  public function detail() {
+    if (!isset($_GET['id'])) {
+      $query = $this->shop_model->getAllProduct();
+      $this->load->view('shop_index', [
+        'query' => $query
+      ]);
+      return true;
+    }
+        
+    $query = $this->shop_model->getProduct($_GET['id']);
+    $this->load->view('shop_detail', [
+      'query' => $query
+    ]);
+  }
 }

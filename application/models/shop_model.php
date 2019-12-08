@@ -11,4 +11,11 @@ class Shop_model extends CI_Model {
     $query = $this->db->get('product');
     return $query->result();
   }
+
+  public function getProduct($id) {
+    $query = $this->db->get_where('product', [
+      'id' => $id
+    ]);
+    return $query->row();
+  }
 }
