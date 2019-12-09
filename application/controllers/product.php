@@ -84,4 +84,13 @@ class Product extends CI_Controller {
       echo '註冊失敗。';
     }
   }
+
+  public function logout() {
+    $this->load->view('product_logout');
+  }
+
+  public function doLogout() {
+    unset($_SESSION['user']);
+    $this->load->view('product_index');
+  }
 }

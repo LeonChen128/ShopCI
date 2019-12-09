@@ -2,7 +2,7 @@
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
   <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>   
-  <a href="<?= base_url('')?>" class="headerWord">登出</a>   
+  <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a>   
 </div>
 <div class="productDetailTable">
   <img src="<?= base_url('upload/' . $query->path)?>" class="pictureDetail">
@@ -20,7 +20,7 @@
     <input type="hidden" name="name" value="<?= $query->name?>">
     <input type="hidden" name="price" value="<?= $query->price?>">
     <input type="hidden" name="path" value="<?= $query->path?>">
-    <button type="submit" class="detailButton">送出</button>
+    <button type="submit" class="detailButton">加入購物車</button>
   </form>
   <a href="<?= base_url('index.php/shop/index')?>" class="backHome">返回商品欄</a>
 </div>

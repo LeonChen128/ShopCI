@@ -264,3 +264,62 @@
 .orderButton:hover {
   background: rgba(11, 100, 171, 1)
 }
+
+.noticeTable {
+  width: 400px;
+  height: 250px;
+  background: white;
+  border-radius: 3px;
+  margin: 100px auto;
+}
+
+.noticeTitle {
+  width: 400px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  background: rgba(239, 97, 52, 1);
+  border-radius: 3px 3px 0 0;
+}
+
+.logoutWord {
+  width: 90px;
+  margin: 40px auto;
+  font-size: 18px;
+}
+
+.logoutYes {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: rgba(29, 146, 239, 1);
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  margin-left: 75px;
+}
+
+.logoutYes:hover {
+  background: rgba(11, 100, 171, 1);
+}
+
+.logoutNo {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: rgba(206, 32, 32, 1);
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  margin-left: 40px; 
+} 
+
+.logoutNo:hover {
+  background: rgba(162, 32, 32, 1);
+}
