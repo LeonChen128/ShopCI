@@ -22,7 +22,19 @@
   margin-left: 20px;
 }
 
-.headerWord:hover {
+.headerUser {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 30px;
+  margin-left: 20px;
+}
+
+.headerWord:hover, .headerUser:hover  {
   background: rgba(162, 51, 15, 1)
 }
 
@@ -242,14 +254,14 @@
 .clearButton {
   width: 100px;
   height: 30px;
-  background: rgba(239, 23, 96, 1);
+  background: rgba(206, 32, 32, 1);
   color: white;
   font-size: 14px;
   border-radius: 3px;
 }
 
 .clearButton:hover {
-  background: rgba(142, 9, 54, 1)
+  background: rgba(162, 32, 32, 1)
 }
 
 .orderButton {
@@ -323,3 +335,60 @@
 .logoutNo:hover {
   background: rgba(162, 32, 32, 1);
 }
+
+.profileTable {
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+  background: white;
+  margin: 25px 0 0 40px;
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 3px;
+  float: left;
+}
+
+.profileTitleWord {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  margin: 20px auto;
+  font-size: 18px;
+  border-radius: 3px; 
+}
+
+.profileinnerWord {
+  margin-left: 20px;
+}
+
+.HistorytitleWord {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border-radius: 3px; 
+}
+
+.buyHistory {
+  display: inline-block;
+  width: 400px;
+  background: white;
+  margin: 25px 0 0 100px;
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 3px;
+  padding: 20px 20px 0px 20px ;
+}
+
+.historyTable {
+  text-align: center;
+  width: 400px;
+  border: 1px solid rgba(100, 100, 100, 1);
+  margin: 0 0 20px 0;
+}
+
+
+
+
