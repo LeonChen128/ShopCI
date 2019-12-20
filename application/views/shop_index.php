@@ -1,4 +1,5 @@
 <?php include 'lib/header.php'?>
+
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
   <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
@@ -7,16 +8,23 @@
   </a>    
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a>  
 </div>
-<div class="productTable">
-  <?php foreach ($query as $products):?>
-    <a href="<?= base_url('index.php/shop/detail?id=' . $products->id)?>" class="linkWord">
-      <div class="productFrame">
-        <img src="<?= base_url('upload/' . $products->path)?>" class="productPicture">
-        <p class="productWord">編號：<?= $products->id?></p><br>
-        <p class="productWord">名稱：<?= $products->name?></p><br>
-        <p class="productWord">價格：<?= $products->price?></p>
-      </div>
-    </a>
-  <?php endforeach?>  
+
+<div class="searchTable">
+  <form action="<?= base_url('index.php/shop/index')?>" method="post" class="searchForm">
+    <input type="text" name="search" value="<?= isset($_POST['search']) ? trim($_POST['search']) : ''?>" placeholder="收尋商品關鍵字" class="searchInput">
+    <button type="submit" class="searchButton">收尋</button>
+  </form>  
 </div>
-<?php include 'lib/footer.php'?>
+
+
+<div class="productTable">
+  <?php
+  if ($query) {
+    echo $load->view('shop/a', ['query' => $query], true);
+  } else { 
+    echo $load->view('shop/b', [], true);
+  }
+  ?>  
+</div>
+
+<?php include 'lib/footer.php';

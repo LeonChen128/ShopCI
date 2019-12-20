@@ -17,7 +17,7 @@
   <?php foreach($historys as $aaa => $bbb):?>
     <?php $total = 0?>
     <table rules="all" class="historyTable">
-      <tr>
+      <tr class="titleRowColor">
         <th>商品名稱</th>
         <th>商品數量</th>
         <th>商品價格</th>
@@ -25,7 +25,7 @@
       </tr>
       <?php foreach($bbb as $key => $value):?>
         <tr>
-          <td><?= $value->name?></td>
+          <td class="titleColumnColor"><?= $value->name?></td>
           <td><?= $value->count?></td>
           <td><?= $value->price?></td>
           <td><?= $value->price * $value->count?></td>
@@ -34,7 +34,7 @@
         </tr>
       <?php endforeach?>
       <tr>
-        <td></td>
+        <td class="titleColumnColor"></td>
         <td></td>
         <td>總計</td>
         <td><?= $total?></td>

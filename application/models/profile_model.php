@@ -1,6 +1,3 @@
-<!--foreach ($query as $key => $value):
-    $query = $this->db->query('SELECT * FROM `order_detail`, `product` WHERE `order_id` ="' . $value->id . '" AND `product_id` = product.id');
--->
 <?php
 
 class Profile_model extends CI_Model {

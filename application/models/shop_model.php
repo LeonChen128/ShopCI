@@ -18,4 +18,11 @@ class Shop_model extends CI_Model {
     ]);
     return $query->row();
   }
+
+  public function searchKeyWord($key) {
+    $query = $this->db->query('SELECT * FROM product WHERE name like "%' . $key . '%"');
+    return $query->result();
+  }
 }
+
+
