@@ -1,12 +1,12 @@
 <?php include 'lib/header.php'?>
+
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
   <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
-  <a href="<?= base_url('index.php/profile/index')?>" class="headerUser">
-    <?= $_SESSION['user']['name']?>
-  </a>    
+  <a href="<?= base_url('index.php/profile/index')?>" class="headerUser">購買紀錄</a>       
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a>  
 </div>
+
 <div class="productDetailTable">
   <img src="<?= base_url('upload/' . $query->path)?>" class="pictureDetail">
   <p class="detailWord">商品編號：<?= $query->id?></p>
@@ -27,4 +27,5 @@
   </form>
   <a href="<?= base_url('index.php/shop/index')?>" class="backHome">返回商品欄</a>
 </div>
+
 <?php include 'lib/footer.php'?>

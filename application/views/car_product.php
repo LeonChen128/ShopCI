@@ -1,13 +1,14 @@
 <?php include 'lib/header.php'?>
+
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
   <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
-  <a href="<?= base_url('index.php/profile/index')?>" class="headerUser">
-    <?= $_SESSION['user']['name']?>
-  </a>    
+  <a href="<?= base_url('index.php/profile/index')?>" class="headerUser">購買紀錄</a>    
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a>  
 </div>
+
 <p class="carTitleWord">購物車內容</p>
+
 <table class="carInternalTable" rules="all">
   <tr>
     <th>商品圖片</th>
@@ -58,4 +59,5 @@
     </td>
   </tr>
 </table>
+
 <?php include 'lib/footer.php'?>

@@ -8,6 +8,8 @@
   height: 60px;
   line-height: 60px;
   background: rgba(239, 97, 52, 1);
+  position: fixed;
+  top: 0px;
 }
 
 .headerWord {
@@ -43,7 +45,7 @@
   height: 400px;
   padding: 25px;
   background: white;
-  margin: 60px auto;
+  margin: 130px auto;
   border-radius: 3px;
   border: 1px solid rgba(220, 220, 220, 1);
   box-shadow: 5px 5px 0px 0px rgba(200, 200, 200, 1);
@@ -104,11 +106,11 @@
 
 .joinMember {
   text-decoration: none;
-  color: rgba(36, 140, 222, 1);
+  color: rgba(0, 51, 153, 1); 
 }
 
 .joinMember:hover {
-  color: rgba(0, 19, 247, 1);
+  text-decoration: underline;
 }
 
 .registerTable {
@@ -116,7 +118,7 @@
   height: 430px;
   padding: 25px;
   background: white;
-  margin: 60px auto;
+  margin: 130px auto;
   border-radius: 3px;
   border: 1px solid rgba(220, 220, 220, 1);
   box-shadow: 5px 5px 0px 0px rgba(200, 200, 200, 1);
@@ -126,8 +128,9 @@
   width: 800px;
   height: 50px;
   line-height: 50px;
-  margin: 20px auto;
+  margin: 80px auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .searchForm {
@@ -165,7 +168,7 @@
   border-radius: 3px;
   background: white;
   padding: 5px 0 20px 15px;
-  margin: 0px 0 0 170px;
+  margin: 0px 0 100px 170px;
 }
 
 .productFrame {
@@ -179,7 +182,7 @@
 }
 
 .productFrame:hover {
-  background: rgba(236, 125, 163, 1)
+  border: 1px solid rgba(239, 97, 52, 1);
 }
 
 .linkWord {
@@ -215,7 +218,7 @@
   background: white;
   border: 1px solid rgba(200, 200, 200, 1);
   border-radius: 3px;
-  margin: 40px auto;
+  margin: 80px auto;
   padding: 30px 20px;
 }
 
@@ -273,6 +276,42 @@
   color: rgba(28, 89, 138, 1);
 }
 
+.noCarTable {
+  margin: 120px auto;
+  width: 400px;
+  height: 240px;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.noCarHeader {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(239, 97, 52, 1);
+  border-radius: 3px 3px 0px 0px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+.noCarWord {
+  margin-top: 60px;
+  font-size: 18px;
+}
+
+.goWatchProduct {
+  display: block;
+  text-decoration: none;
+  margin-top: 40px;
+  color: rgba(0, 51, 153, 1);
+}
+
+.goWatchProduct:hover {
+  text-decoration: underline;
+}
+
 .carInternalTable {
   text-align: center;
   border: 1px solid rgba(150, 150, 150, 1);
@@ -283,8 +322,10 @@
 
 .carTitleWord {
   width: 200px;
-  margin: 20px auto;
+  margin: 90px auto;
   font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .carPicture {
@@ -328,7 +369,7 @@
   height: 250px;
   background: white;
   border-radius: 3px;
-  margin: 100px auto;
+  margin: 120px auto;
 }
 
 .noticeTitle {
@@ -387,7 +428,7 @@
   width: 300px;
   height: 200px;
   background: white;
-  margin: 25px 0 0 40px;
+  margin: 100px 0 0 40px;
   border: 1px solid rgba(200, 200, 200, 1);
   border-radius: 3px;
   float: left;
@@ -422,7 +463,7 @@
   display: inline-block;
   width: 400px;
   background: white;
-  margin: 25px 0 0 100px;
+  margin: 100px 0 0 100px;
   border: 1px solid rgba(200, 200, 200, 1);
   border-radius: 3px;
   padding: 20px 20px 0px 20px ;
