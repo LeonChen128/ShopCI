@@ -213,13 +213,15 @@
 }
 
 .productDetailTable {
+  display: inline-block;
   width: 500px;
   height: 600px;
   background: white;
   border: 1px solid rgba(200, 200, 200, 1);
   border-radius: 3px;
-  margin: 80px auto;
+  margin: 80px 0 0 150px;
   padding: 30px 20px;
+  float: left;
 }
 
 .pictureDetail {
@@ -265,15 +267,105 @@
 }
 
 .backHome {
-  display: block;
+  display: inline-block;
   margin: 40px 0 0 50px;
   text-decoration: none;
-  color: rgba(68, 147, 210, 1);
+  color: rgba(0, 51, 153, 1);
   font-size: 18px;
 }
 
 .backHome:hover {
-  color: rgba(28, 89, 138, 1);
+  text-decoration: underline;
+}
+
+.messageTable {
+  display: inline-block;
+  width: 500px;
+  background: white;
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 3px;
+  float: left;
+  margin: 80px 20px;
+}
+
+.messageFrame {
+  width: 450px;
+  height: 180px;
+  margin: 0px auto;
+}
+
+.messageInput {
+  border: 1px solid rgba(150, 150, 150, 1);
+  border-radius: 2px;
+  width: 450px;
+  height: 100px;
+  font-size: 16px;
+  margin: 22px 0px 0px -3px;
+}
+
+.doMessageButton {
+  width: 80px;
+  height: 30px;
+  background: rgba(29, 146, 239, 1);
+  color: white;
+  font-size: 14px;
+  border-radius: 3px;
+  margin: 5px 0px 0px -3px;
+}
+
+.doMessageButton:hover {
+  background: rgba(11, 100, 171, 1);
+}
+
+.messageClearButton {
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  background: rgba(255, 152, 0, 1);
+  font-size: 14px;
+}
+
+.messageClearButton:hover {
+  background: rgba(222, 135, 7, 1)
+}
+
+.noMessage {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  margin:0 auto;
+}
+
+.messageShow {
+  display: inline-block;
+  width: 400px;
+  line-height: 100px;
+  background: white;
+  margin: 0 0 22px 45px;
+}
+
+.messageUserProfile {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  float: left;
+  border: 1px solid rgba(229, 229, 229, 1);
+}
+
+.userName {
+  color: rgba(56, 88, 152, 1);
+}
+
+.messageContent {
+  display: inline-block;
+  width: 325px;
+  line-height: 40px;
+  border-radius: 20px;
+  background: rgba(242, 243, 245, 1);
+  float: left; 
+  margin: 0 0 0 10px; 
+  padding: 0px 10px;
 }
 
 .noCarTable {

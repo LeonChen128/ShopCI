@@ -1,5 +1,7 @@
 <?php include 'lib/header.php'?>
 
+<script src="<?= base_url('lib/shop_detail.js')?>"></script>
+
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
   <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
@@ -26,6 +28,33 @@
     <button type="submit" class="detailButton">加入購物車</button>
   </form>
   <a href="<?= base_url('index.php/shop/index')?>" class="backHome">返回商品欄</a>
+</div>
+
+<div class="messageTable">
+  <div class="messageFrame">
+    <form action="<?= base_url('index.php/shop/doMessage')?>" method="post">
+      <input type="hidden" name="product_id" value="<?= $query->id?>">
+      <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id']?>">
+      <textarea name="message" class="messageInput" placeholder="輸入您的留言..." id="message"></textarea>
+      <button type="submit" class="doMessageButton" onclick="return checkMessage()">送出</button>
+      <button type="reset" class="messageClearButton">清除</button>
+    </form>  
+  </div>
+
+  <hr>
+  <?php
+  if ($messages == []) { ?>
+    <p class="noMessage">尚無留言</p>
+  <?php
+  } else {
+    foreach ($messages as $aaa) { ?>
+      <div class="messageShow">
+        <img src="<?= base_url('userUpload/'. $aaa->path)?>" class="messageUserProfile"> 
+        <div class="messageContent"><spanl class="userName"><?= $aaa->name?>：</spanl><?= $aaa->message?></div>       
+      </div>
+  <?php    
+    }
+  } ?>
 </div>
 
 <?php include 'lib/footer.php'?>
