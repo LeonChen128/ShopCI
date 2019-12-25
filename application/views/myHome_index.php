@@ -27,7 +27,7 @@
     </label>
   </form>
 
-  <form action="" method="post" class="myHomeFormTable2">
+  <form action="<?= base_url('index.php/myHome/resetName')?>" method="post" class="myHomeFormTable2">
     <spanl class="myHomeName">名稱</spanl><input type="text" name="name" value="<?= $_SESSION['user']['name']?>" class="myHomeNameInput">
     <button class="myHomeNameButton">修改名稱</button>
   </form>

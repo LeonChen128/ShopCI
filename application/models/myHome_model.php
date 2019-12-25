@@ -22,4 +22,16 @@ class MyHome_model extends CI_Model {
     $newPhotoPath = $upload . '/' . $_SESSION['user']['id'] . '.jpg';
     return move_uploaded_file($fileTmpName, $newPhotoPath);
   }
+
+  public function confirmName($name) {
+    $query = $this->db->query('SELECT * FROM user WHERE name = "' . $name . '"');
+    return $query->row();
+  }
+
+  public function resetName($name, $id) {
+    $this->db->query('UPDATE user SET name = "'. $name . '" WHERE id =' . $id);
+    $query = $this->db->query('SELECT * FROM user WHERE name = "' . $name . '"');
+    return $query->row();
+    
+  }
 }
