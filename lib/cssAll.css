@@ -24,6 +24,37 @@
   margin-left: 20px;
 }
 
+.myProfileLink {
+  display: inline-block;
+  float: right;
+  padding: 0 10px;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 7px;
+  border-radius: 22.5px
+}
+
+.myProfileLink:hover {
+  background: rgba(162, 51, 15, 1)
+}
+
+.myProfile {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  float: right;
+  border: 1px solid rgba(229, 229, 229, 1); 
+  margin: 5px 10px 0 0;
+}
+
+.myName {
+  display: inline-block;
+  float: right;
+  color: white;
+  margin: 0 0 0 0;
+}
+
 .headerUser {
   display: inline-block;
   text-decoration: none;
@@ -576,4 +607,107 @@
   background: rgba(169, 213, 247, 1)
 }
 
+.myHomeTable {
+  width: 650px;
+  height: 500px;
+  background: white;
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 3px;
+  margin: 120px auto;
+  padding: 10px 30px;
+}
 
+.myHomeTitle {
+  font-size: 20px
+}
+
+.myHomeHr {
+  margin-bottom: 40px
+}
+
+.myHomeProfile {
+  margin: 100px 40px 0 0;
+  color: rgba(100, 100, 100, 1);
+  float: left;
+}
+
+.myHomeProfileImg {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(150, 150, 150, 1);
+  border-radius: 100px;
+}
+
+.upload {
+  float: right;
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+  vertical-align: center;
+  border: 1px solid rgba(200,200,200,1);
+  color: rgba(100,100,100,1);
+  border-radius: 0px;
+  padding-top: 2px;
+  margin: 92px 40px 0 0;
+}
+
+.upload input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.myHomeProfileButton {
+  width: 80px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(55, 147, 220, 1);
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  color: white;
+  float: right;
+  margin: 90px 0px 0 0;
+}
+
+.myHomeProfileButton:hover {
+  background: rgba(30, 114, 181, 1);
+}
+
+.myHomeFormTable2 {
+  margin-top: 40px;
+}
+
+.myHomeName {
+  margin: 0px 10px 0 0;
+  color: rgba(100, 100, 100, 1);
+}
+
+.myHomeNameInput {
+  width: 300px;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: rgba(50, 50, 50, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(200, 200, 200, 1);
+  margin: 0 10px 0 0;
+}
+
+.myHomeNameButton {
+  width: 80px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(55, 147, 220, 1);
+  font-size: 16px;
+  margin: 20px 0 0 190px;
+  color: white;
+}
+
+.myHomeNameButton:hover {
+  background: rgba(30, 114, 181, 1);
+}

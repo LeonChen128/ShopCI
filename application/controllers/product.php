@@ -28,7 +28,8 @@ class Product extends CI_Controller {
       unset($_SESSION['user']);
       $_SESSION['user'] = [
         'id' => $user->id,
-        'name' => $user->name
+        'name' => $user->name,
+        'path' => $user->path
       ];
       echo '歡迎回來，' . $_SESSION['user']['name'];
       header('Refresh:3 url=' . base_url('/index.php/shop/index'));
