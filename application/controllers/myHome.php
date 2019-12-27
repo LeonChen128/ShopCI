@@ -25,12 +25,20 @@ class MyHome extends CI_Controller {
       redirect(base_url('index.php/shop/index'));
       return true;
     }
-
-    if (!$this->myHome_model->resetPhoto($_FILES['file']['tmp_name'])) {
+    $tmp_name = $_FILES['file']['tmp_name'];
+    $id = $_SESSION['user']['id'];
+    if (!$this->myHome_model->resetPhoto($id, $tmp_name)) {
       echo '圖片上傳失敗';
       header('Refresh: 3 url=' . base_url('index.php/myHome/index'));
       return true;
     } else {
+      $query = $this->myHome_model->getUserData($id); 
+      $_SESSION['user'] = [
+        'id'   => $query->id,
+        'name' => $query->name,
+        'path' => $query->path
+      ];
+
       echo '圖片修改成功';
       header('Refresh: 3 url=' . base_url('index.php/myHome/index'));
       return true;
@@ -77,6 +85,66 @@ class MyHome extends CI_Controller {
       header('Refresh: 3 url=' . base_url('index.php/myHome/index'));
       return true;
     }
+  }
 
+  public function password() {
+    if (!isset($_SESSION['user'])) {
+      redirect(base_url('index.php/product/index'));
+      return true;
+    }
+    $this->load->view('myHome_password');    
+  }
+
+  public function resetPassword() {
+    if (!isset($_SESSION['user'])) {
+      redirect(base_url('index.php/product/index'));
+      return true;
+    }
+
+    if (!$this->input->post()) {
+      redirect(base_url('index.php/shop/index'));
+      return true;
+    }
+
+    $id = $_SESSION['user']['id'];
+    $oldPassword = trim($_POST['oldPassword']);
+    $newPassword = trim($_POST['newPassword']);
+    $rePassword  = trim($_POST['rePassword']);
+
+    if ($oldPassword == '') {
+      echo '舊密碼欄位不可為空白！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
+
+    if ($newPassword == '') {
+      echo '新密碼欄位不可為空白！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
+
+    if (!$this->myHome_model->confirmPassword($id, $oldPassword)) {
+      echo '您的密碼輸入錯誤，請重新確認！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
+
+    if (mb_strlen($newPassword) > 12) {
+      echo '密碼字數須小於12，請重新確認！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
+
+    if ($newPassword != $rePassword) {
+      echo '新密碼確認錯誤，請重新輸入！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
+
+    if ($this->myHome_model->resetPassword($id, $newPassword)) {
+      echo '密碼修改成功！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    }
   }
 }

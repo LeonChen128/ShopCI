@@ -317,6 +317,7 @@
   border-radius: 3px;
   float: left;
   margin: 80px 20px;
+  padding: 0 20px;
 }
 
 .messageFrame {
@@ -607,14 +608,80 @@
   background: rgba(169, 213, 247, 1)
 }
 
+.myHomeSelectTable {
+  width: 150px;
+  height: 200px;
+  display: inline-block;
+  float: left;
+  margin: 120px 0 0 200px;
+}
+
+.myHomeSelectPhoto {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(229, 229, 229, 1); 
+  margin: 10px 0 0 0;
+  float: left;
+}
+
+.myHomeSelectTitleWord {
+  font-size: 16px;
+  float: left;
+  margin: 15px 0 0 15px;
+}
+
+.myDataResetNow {
+  margin: 30px 0 0 47px;
+  font-size: 14px;
+  color: rgba(239, 97, 52);
+  cursor: pointer;
+}
+
+.myDataReset {
+  margin: 30px 0 0 47px;
+  font-size: 14px;
+  color: rgba(100, 100, 100, 1);
+  cursor: pointer;
+}
+
+.myDataReset:hover {
+  color: rgba(239, 97, 52);
+}
+
+.myPasswordResetNow {
+  margin: 5px 0 0 47px;
+  font-size: 14px;
+  color: rgba(239, 97, 52, 1);
+  cursor: pointer;
+}
+
+.myPasswordReset {
+  margin: 5px 0 0 47px;
+  font-size: 14px;
+  color: rgba(100, 100, 100, 1);
+  cursor: pointer;
+}
+
+.myPasswordReset:hover {
+  color: rgba(239, 97, 52);
+}
+
+.dataReset {
+  text-decoration: none;
+}
+
 .myHomeTable {
+  display: inline-block;
   width: 650px;
   height: 500px;
   background: white;
   border: 1px solid rgba(200, 200, 200, 1);
   border-radius: 3px;
-  margin: 120px auto;
+  margin: 120px 0 0 0px;
   padding: 10px 30px;
+  float: left;
 }
 
 .myHomeTitle {
@@ -709,5 +776,53 @@
 }
 
 .myHomeNameButton:hover {
+  background: rgba(30, 114, 181, 1);
+}
+
+.passwordTable {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.myPasswordWord1 {
+  display: inline-block;
+  margin: 50px 10px 0 0;
+  color: rgba(100, 100, 100, 1);
+}
+
+.myPasswordWord2 {
+  display: inline-block;
+  margin: 25px 10px 0 16px;
+  color: rgba(100, 100, 100, 1);
+}
+
+.myPasswordWord3 {
+  display: inline-block;
+  margin: 25px 10px 0 0;
+  color: rgba(100, 100, 100, 1);
+}
+
+.myPasswordInput {
+  width: 300px;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: rgba(50, 50, 50, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(200, 200, 200, 1);
+  margin: 0 10px 0 0;
+}
+
+.resetPasswordButton {
+  width: 90px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(55, 147, 220, 1);
+  font-size: 16px;
+  margin: 30px 0 0 326px;
+  color: white;
+}
+
+.resetPasswordButton:hover {
   background: rgba(30, 114, 181, 1);
 }

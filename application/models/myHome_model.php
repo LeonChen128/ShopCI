@@ -7,7 +7,9 @@ class MyHome_model extends CI_Model {
     session_start();
   }
 
-  public function resetPhoto($fileTmpName) {
+  public function resetPhoto($id, $fileTmpName) {
+    $this->db->query('UPDATE user SET `path` ="' . $id . '.jpg" WHERE id =' . $id);
+
     $thisProjectPath = __file__;
     $path = explode('/', $thisProjectPath);
     array_pop($path);
@@ -31,7 +33,24 @@ class MyHome_model extends CI_Model {
   public function resetName($name, $id) {
     $this->db->query('UPDATE user SET name = "'. $name . '" WHERE id =' . $id);
     $query = $this->db->query('SELECT * FROM user WHERE name = "' . $name . '"');
+    return $query->row();   
+  }
+
+  public function getUserData($id) {
+    $query = $this->db->get_where('user', [
+      'id' => $id
+    ]);
     return $query->row();
-    
+  }
+
+  public function confirmPassword($id, $oldPassword) {
+    $query = $this->db->query('SELECT * FROM user WHERE id =' . $id . ' AND `password` = "' . $oldPassword . '"');
+    return $query->row();
+  }
+
+  public function resetPassword($id, $newPassword) {
+    $query = $this->db->query('UPDATE `user` SET `password` = "' . $newPassword . '" WHERE id = ' . $id);
+    $query = $this->db->query('SELECT * FROM `user` WHERE id =' . $id . ' AND `password` = "' . $newPassword . '"');
+    return $query->row();
   }
 }
