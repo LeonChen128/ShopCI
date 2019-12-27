@@ -9,7 +9,34 @@
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a> 
   <a href="<?= base_url('index.php/myHome/index')?>" class="myProfileLink">
     <spanl class="myName"><?= $_SESSION['user']['name']?></spanl>
-    <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php 
+    if ($_SESSION['user']['path'] == '') { ?>
+      <img src="<?= base_url('userupload/0.jpg')?>" class="myProfile">
+    <?php
+    } else { ?>
+      <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php } ?>
+  </a>
+</div>
+
+<div class="myHomeSelectTable">
+  <?php 
+    if ($_SESSION['user']['path'] == '') { ?>
+      <img src="<?= base_url('userupload/0.jpg')?>" class="myHomeSelectPhoto">
+    <?php
+    } else { ?>
+      <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myHomeSelectPhoto">
+    <?php } ?>
+    
+  <spanl class="myHomeSelectTitleWord">我的帳戶</spanl>
+  <br>
+
+  <a href="<?= base_url('index.php/myHome/index')?>" class="dataReset">
+    <p class="myDataResetNow">資料修改</p>
+  </a>
+
+  <a href="<?= base_url('index.php/myHome/password')?>" class="dataReset">
+    <p class="myPasswordReset">密碼修改</p>
   </a>
 </div>
 
@@ -19,7 +46,13 @@
 
   <form action="<?= base_url('index.php/myHome/resetPhoto')?>" method="post" enctype="multipart/form-data">
     <spanl class="myHomeProfile">頭像</spanl>
-    <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myHomeProfileImg">
+    <?php 
+    if ($_SESSION['user']['path'] == '') { ?>
+      <img src="<?= base_url('userupload/0.jpg')?>" class="myHomeProfileImg">
+    <?php
+    } else { ?>
+      <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myHomeProfileImg">
+    <?php } ?>
     <button class="myHomeProfileButton" onclick="return checkFile()">確認</button>
     <label type="button" class="upload">
       <spanl class=>修改頭像</spanl>

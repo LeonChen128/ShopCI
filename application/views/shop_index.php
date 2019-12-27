@@ -7,7 +7,13 @@
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a>  
   <a href="<?= base_url('index.php/myHome/index')?>" class="myProfileLink">
     <spanl class="myName"><?= $_SESSION['user']['name']?></spanl>
-    <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php 
+    if ($_SESSION['user']['path'] == '') { ?>
+      <img src="<?= base_url('userupload/0.jpg')?>" class="myProfile">
+    <?php
+    } else { ?>
+      <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php } ?>
   </a>
 </div>
 

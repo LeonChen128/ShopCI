@@ -9,7 +9,13 @@
   <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a> 
   <a href="<?= base_url('index.php/myHome/index')?>" class="myProfileLink">
     <spanl class="myName"><?= $_SESSION['user']['name']?></spanl>
-    <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php 
+    if ($_SESSION['user']['path'] == '') { ?>
+      <img src="<?= base_url('userupload/0.jpg')?>" class="myProfile">
+    <?php
+    } else { ?>
+      <img src="<?= base_url('userupload/' . $_SESSION['user']['path'])?>" class="myProfile">
+    <?php } ?>
   </a>
 </div>
 
@@ -53,7 +59,13 @@
   } else {
     foreach ($messages as $aaa) { ?>
       <div class="messageShow">
-        <img src="<?= base_url('userUpload/'. $aaa->path)?>" class="messageUserProfile"> 
+        <?php
+        if ($aaa->path == '') { ?>
+          <img src="<?= base_url('userUpload/0.jpg')?>" class="messageUserProfile"> 
+        <?php 
+        } else { ?>
+          <img src="<?= base_url('userUpload/'. $aaa->path)?>" class="messageUserProfile"> 
+        <?php } ?>
         <div class="messageContent"><spanl class="userName"><?= $aaa->name?>：</spanl><?= $aaa->message?></div>       
       </div>
   <?php    
