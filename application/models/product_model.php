@@ -9,6 +9,16 @@ class product_model extends CI_Model {
     session_start();
   }
 
+  public function getAllProduct() {
+    $query = $this->db->get('product');
+    return $query->result();
+  }
+
+  public function searchProducts($search) {
+    $query = $this->db->query('SELECT * FROM product WHERE `name` like "%' . $search . '%"');
+    return $query->result();
+  }
+
   public function checkExistedName($name) {
     $query = $this->db->get_where($this->table, [
       'name' => $name
