@@ -63,7 +63,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.webp
 
 # Portable Network Graphics
-*.png
+# *.png
 
 # Animated Portable Network Graphics
 *.apng
