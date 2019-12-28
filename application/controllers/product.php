@@ -8,7 +8,20 @@ class Product extends CI_Controller {
   }
 
   public function index() {
-    $this->load->view('product_index');
+
+    if ($this->input->post()) {
+      $search = $_POST['search'];
+      $query = $this->product_model->searchProducts($search);
+      $this->load->view('product_index', [
+      'query' => $query
+      ]);
+      return true;
+    }
+
+    $query = $this->product_model->getAllProduct();
+    $this->load->view('product_index', [
+      'query' => $query
+    ]);
     return true;
   }
 
@@ -19,7 +32,7 @@ class Product extends CI_Controller {
 
   public function checkLogin() {
     if (!$this->input->post()) {
-      $this->load->view('product_login');
+      redirect(base_url('index.php/product/login'));
       return true;
     }
     $data = $this->input->post();
@@ -48,7 +61,7 @@ class Product extends CI_Controller {
 
   public function registerUser() {
     if (!$this->input->post()) {
-      $this->load->view('product_register');
+      redirect(base_url('index.php/product/register'));
       return true;
     }
 
@@ -120,7 +133,7 @@ class Product extends CI_Controller {
 
   public function doLogout() {
     unset($_SESSION['user']);
-    $this->load->view('product_index');
+    redirect(base_url('index.php/product/index'));
     return true;
   }
 }
