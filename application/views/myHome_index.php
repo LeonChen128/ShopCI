@@ -55,14 +55,22 @@
     <?php } ?>
     <button class="myHomeProfileButton" onclick="return checkFile()">確認</button>
     <label type="button" class="upload">
-      <spanl class=>修改頭像</spanl>
+      <spanl class=>
+        <?php
+        if ($_SESSION['user']['path'] == '') {
+          echo '新增頭像';
+        } else {
+          echo '修改頭像';
+        }
+        ?>        
+      </spanl>
       <input type="file" name="file" id="uploadFile">
     </label>
   </form>
 
   <form action="<?= base_url('index.php/myHome/resetName')?>" method="post" class="myHomeFormTable2">
     <spanl class="myHomeName">名稱</spanl><input type="text" name="name" value="<?= $_SESSION['user']['name']?>" class="myHomeNameInput">
-    <button class="myHomeNameButton">修改名稱</button>
+    <button class="myHomeNameButton">確認</button>
   </form>
 
 </div>

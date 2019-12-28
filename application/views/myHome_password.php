@@ -1,6 +1,6 @@
 <?php include 'lib/header.php'?>
 
-<script src="<?= base_url('lib/myHome_index.js')?>"></script>
+<script src="<?= base_url('lib/myHome_password.js')?>"></script>
 
 <div class="header">
   <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
@@ -46,15 +46,15 @@
 
   <form action="<?= base_url('index.php/myHome/resetPassword')?>" method="post" class="passwordTable">
     <spanl class="myPasswordWord1">現在的密碼</spanl>
-    <input type="password" name="oldPassword" class="myPasswordInput">
+    <input type="password" name="oldPassword" class="myPasswordInput" id="oldPassword">
     <br>
     <spanl class="myPasswordWord2">新的密碼</spanl>
-    <input type="password" name="newPassword" class="myPasswordInput">
+    <input type="password" name="newPassword" class="myPasswordInput" id="newPassword">
     <br>
     <spanl class="myPasswordWord3">確認的密碼</spanl>
-    <input type="password" name="rePassword" class="myPasswordInput">
+    <input type="password" name="rePassword" class="myPasswordInput" id="rePassword">
     <br>
-    <button type="submit" class="resetPasswordButton">確認</button>
+    <button type="submit" class="resetPasswordButton" onclick="return ckeckResetPassword()">確認</button>
   </form>
 
 </div>

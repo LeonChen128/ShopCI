@@ -117,14 +117,14 @@ class MyHome extends CI_Controller {
       return true;
     }
 
-    if ($newPassword == '') {
-      echo '新密碼欄位不可為空白！';
+    if (!$this->myHome_model->confirmPassword($id, $oldPassword)) {
+      echo '您的密碼輸入錯誤，請重新確認！';
       header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
       return true;
     }
 
-    if (!$this->myHome_model->confirmPassword($id, $oldPassword)) {
-      echo '您的密碼輸入錯誤，請重新確認！';
+    if ($newPassword == '') {
+      echo '新密碼欄位不可為空白！';
       header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
       return true;
     }
@@ -143,6 +143,10 @@ class MyHome extends CI_Controller {
 
     if ($this->myHome_model->resetPassword($id, $newPassword)) {
       echo '密碼修改成功！';
+      header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
+      return true;
+    } else {
+      echo '密碼修改失敗！';
       header('Refresh: 3 url=' . base_url('index.php/myHome/password'));
       return true;
     }
