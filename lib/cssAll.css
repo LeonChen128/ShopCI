@@ -659,65 +659,92 @@
   background: rgba(162, 32, 32, 1);
 }
 
-.profileTable {
-  display: inline-block;
-  width: 300px;
-  height: 200px;
-  background: white;
-  margin: 100px 0 0 40px;
-  border: 1px solid rgba(200, 200, 200, 1);
-  border-radius: 3px;
-  float: left;
-}
-
-.profileTitleWord {
-  text-align: center;
-  width: 100px;
-  height: 20px;
-  line-height: 20px;
-  margin: 20px auto;
-  font-size: 18px;
-  border-radius: 3px; 
-}
-
 .profileinnerWord {
   margin-left: 20px;
 }
 
-.HistorytitleWord {
-  text-align: center;
+.buyHistory {
   width: 100px;
   height: 20px;
-  line-height: 20px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  font-size: 18px;
-  border-radius: 3px; 
-}
-
-.buyHistory {
-  display: inline-block;
-  width: 400px;
-  background: white;
-  margin: 100px 0 0 100px;
-  border: 1px solid rgba(200, 200, 200, 1);
-  border-radius: 3px;
-  padding: 20px 20px 0px 20px ;
-}
-
-.historyTable {
   text-align: center;
-  width: 400px;
-  border: 1px solid rgba(100, 100, 100, 1);
-  margin: 0 0 20px 0;
+  margin: 100px auto;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.titleRowColor {
-  background: rgba(76, 167, 239, 1);
+.buyHistoryFrame {
+  display: inline-block;
+  width: 800px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  margin: 0 0 15px 300px;
+  padding: 15px 20px;
 }
 
-.titleColumnColor {
-  background: rgba(169, 213, 247, 1)
+.eachProductFrame {
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+
+.eachProductPicture {
+  float: left;
+  width: 100px;
+  height: 75px;
+  border-radius: 3px;
+  margin: 3px 0 0 0;
+}
+
+.buyHistoryWord1 {
+  display: inline-block;
+  position: absolute;
+  margin: -20px 0 0 40px;
+}
+
+.buyHistoryWord2 {
+  display: inline-block;
+  position: absolute;
+  margin: 5px 0 0 180px;  
+}
+
+.buyHistoryWord3 {
+  display: inline-block;
+  position: absolute;
+  margin: 5px 0 0 40px;
+}
+
+.buyHistoryWord4 {
+  display: inline-block;
+  position: absolute;
+  margin: 5px 0 0 550px;  
+}
+
+.buyHistoryHr {
+  margin: 0px;
+  height: 1px;
+  border: none;
+  background: rgba(200, 200, 200, 1);
+}
+
+.buyHistoryTotalFrame {
+  width: 800px;
+  height: 20px;
+}
+
+.buyHistoryTotal1 {
+  display: inline-block;
+  position: absolute;
+  margin: 7px 0 0 600px;
+}
+
+.buyHistoryTotal2 {
+  display: inline-block;
+  position: absolute;
+  margin: 5px 0 0 650px;
+  font-size: 18px;
+  color: red;  
 }
 
 .myHomeSelectTable {
