@@ -8,6 +8,11 @@ class Car extends CI_Controller {
   }
 
   public function index() {
+    if (!$_SESSION['user']) {
+      redirect(base_url('index.php/product/index'));
+      return true;
+    }
+
     if (!isset($_SESSION['car'])) {
       $this->load->view('car_nothing');
       return true;
@@ -15,27 +20,39 @@ class Car extends CI_Controller {
 
     if (isset($_POST['clear'])) {
       unset($_SESSION['car'][$_POST['clear']]);
+      if ($_SESSION['car'] == []) {
+        unset($_SESSION['car']);
+        $this->load->view('car_nothing');
+        return true;
+      }
     }
     
-    if ($_SESSION['car'] == []) {
-      $this->load->view('car_nothing');
-      return true;
-    }
     $this->load->view('car_product');
   }
 
   public function insert() {
-    if (!$this->input->post()) {
-      header('Location:' . base_url('index.php/shop/index'));
+    if (!$_SESSION['user']) {
+      redirect(base_url('index.php/product/index'));
       return true;
     }
+
+    if (!$this->input->post()) {
+      redirect(base_url('index.php/shop/index'));
+      return true;
+    }
+
     $this->car_model->insertCar();
     $this->load->view('car_product');
   }
 
   public function order() {
+    if (!$_SESSION['user']) {
+      redirect(base_url('index.php/product/index'));
+      return true;
+    }
+
     if (!isset($_POST['order'])) {
-      header('Location:' . base_url('index.php/shop/index'));
+      redirect(base_url('index.php/shop/index'));
       return true;
     }
     

@@ -40,7 +40,7 @@ class Product extends CI_Controller {
     if ($user = $this->product_model->checkLogin($data)) {
       unset($_SESSION['user']);
       $_SESSION['user'] = [
-        'id' => $user->id,
+        'id'   => $user->id,
         'name' => $user->name,
         'path' => $user->path
       ];

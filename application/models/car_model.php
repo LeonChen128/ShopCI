@@ -12,7 +12,7 @@ class Car_model extends CI_Model {
     $name  = $_POST['name'];
     $price = $_POST['price'];
     $path  = $_POST['path'];
-    $count = 0;
+
     if (isset($_SESSION['car'][$id]['count'])) {
       $count = $_POST['count'] + $_SESSION['car'][$id]['count'];
     } else {
@@ -29,7 +29,7 @@ class Car_model extends CI_Model {
 
   public function insertOrder($data) {
     $this->db->insert('order', $data);
-    return $this->db->insert_id();
+    return $this->db->insert_id(); //回傳insert進去的primaryKey
   }
 
   public function insertOrderDetail($data) {

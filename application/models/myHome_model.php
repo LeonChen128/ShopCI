@@ -21,7 +21,7 @@ class MyHome_model extends CI_Model {
     if (!file_exists($upload)) {
       mkdir($upload);
     }
-    $newPhotoPath = $upload . '/' . $_SESSION['user']['id'] . '.jpg';
+    $newPhotoPath = $upload . '/' . $id . '.jpg';
     return move_uploaded_file($fileTmpName, $newPhotoPath);
   }
 

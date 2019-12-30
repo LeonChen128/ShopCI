@@ -21,9 +21,9 @@ class Shop extends CI_Controller {
       ]);
       return true;
     }
+
     $query = $this->shop_model->getAllProduct();
     
-
     $this->load->view('shop_index', [
       'load' => $this->load,
       'query' => $query
@@ -31,6 +31,11 @@ class Shop extends CI_Controller {
   }
 
   public function detail() {
+    if (!isset($_SESSION['user'])) {
+      redirect(base_url('index.php/product/index'));
+      return true;
+    }
+
     if (!isset($_GET['id'])) {
       redirect(base_url('index.php/shop/index'));
       return true;
