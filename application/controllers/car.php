@@ -40,9 +40,27 @@ class Car extends CI_Controller {
       redirect(base_url('index.php/shop/index'));
       return true;
     }
+    
+    $id    = $_POST['id'];
+    $name  = $_POST['name'];
+    $price = $_POST['price'];
+    $path  = $_POST['path'];
 
-    $this->car_model->insertCar();
+    if (isset($_SESSION['car'][$id]['count'])) {
+      $count = $_POST['count'] + $_SESSION['car'][$id]['count'];
+    } else {
+      $count = $_POST['count'];
+    }
+
+    $_SESSION['car'][$id] = [
+      'name'  => $name,
+      'price' => $price,
+      'count' => $count,
+      'path'  => $path
+    ];
+
     $this->load->view('car_product');
+    return true;
   }
 
   public function order() {
