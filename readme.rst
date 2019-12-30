@@ -1,5 +1,5 @@
 ###############################
-利用CodeIgniter框架練習製作購物網站
+利用PHP框架 - "CodeIgniter"練習製作購物網站
 ###############################
 
 此作品為我練習之第四個作品，內容為一購物網站，另外為求了解"MVC"架構及框架語法運用，此次主要使用CodeIgniter框架製作，當中也運用HTML、CSS及少量JavaScript等語法編寫。主要的程式碼可以參考"application/controllers"、"application/models"及"application/views"，畫面請參考以下內容。
