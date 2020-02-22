@@ -1,11 +1,11 @@
 <?php include 'lib/header.php'?>
 
 <div class="header">
-  <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
-  <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
-  <a href="<?= base_url('index.php/history/index')?>" class="headerUser">購買紀錄</a>    
-  <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a> 
-  <a href="<?= base_url('index.php/myHome/index')?>" class="myProfileLink">
+  <a href="<?= base_url('/shop/index')?>" class="headerWord">商品</a> 
+  <a href="<?= base_url('/car/index')?>" class="headerWord">購物車</a>
+  <a href="<?= base_url('/history/index')?>" class="headerUser">購買紀錄</a>    
+  <a href="<?= base_url('/product/logout')?>" class="headerWord">登出</a> 
+  <a href="<?= base_url('/myHome/index')?>" class="myProfileLink">
     <spanl class="myName"><?= $_SESSION['user']['name']?></spanl>
     <?php 
     if ($_SESSION['user']['path'] == '') { ?>
@@ -35,7 +35,7 @@ foreach ($_SESSION['car'] as $id => $products):
   $subtotal = $products['count'] * $products['price'];
   $total += $subtotal; ?>
   <div class="carProductcontent">
-    <a href="<?= base_url('index.php/shop/detail?id=' . $id)?>">
+    <a href="<?= base_url('/shop/detail?id=' . $id)?>">
       <img src="<?= base_url('upload/' . $products['path'])?>" class="carPicture">
     </a>
     <spanl class="contentWord1"><?= $id?></spanl>
@@ -43,7 +43,7 @@ foreach ($_SESSION['car'] as $id => $products):
     <spanl class="contentWord3"><?= $products['price']?></spanl>
     <spanl class="contentWord4"><?= $products['count']?></spanl>
     <spanl class="contentWord5"><?= $products['count'] * $products['price']?></spanl>
-    <form action="<?= base_url('index.php/car/index')?>" method="post" class="clearForm">
+    <form action="<?= base_url('/car/index')?>" method="post" class="clearForm">
       <input type="hidden" name="clear" value="<?= $id?>">
       <button type="submit" class="clearButton">清除</button>
     </form>
@@ -53,7 +53,7 @@ foreach ($_SESSION['car'] as $id => $products):
 <div class="carProductPurchase">
   <spanl class="carProductPurchaseWord1">總金額：</spanl>  
   <spanl class="carProductPurchaseWord2">$<?= $total?></spanl> 
-  <form action="<?= base_url('index.php/car/order')?>" method="post" class="orderForm">
+  <form action="<?= base_url('/car/order')?>" method="post" class="orderForm">
     <input type="hidden" name="order" value="yes">
     <button type="submit" class="orderButton">確定下單</button>
   </form>

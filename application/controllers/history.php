@@ -9,7 +9,7 @@ class History extends CI_Controller {
 
   public function index() {
     if (!isset($_SESSION['user'])) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 

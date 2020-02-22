@@ -9,7 +9,7 @@ class Car extends CI_Controller {
 
   public function index() {
     if (!$_SESSION['user']) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 
@@ -32,12 +32,12 @@ class Car extends CI_Controller {
 
   public function insert() {
     if (!$_SESSION['user']) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 
     if (!$this->input->post()) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
     
@@ -65,12 +65,12 @@ class Car extends CI_Controller {
 
   public function order() {
     if (!$_SESSION['user']) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 
     if (!isset($_POST['order'])) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
     
@@ -87,7 +87,7 @@ class Car extends CI_Controller {
     $data = ['user' => $_SESSION['user']['name']];
     if (! $orderId = $this->car_model->insertOrder($data)) {
       echo '下單失敗';
-      header('Refresh: 3 url=' . base_url('index.php/shop/index'));
+      header('Refresh: 3 url=' . base_url('shop/index'));
       return true;
     }
 
@@ -99,13 +99,13 @@ class Car extends CI_Controller {
       ];
       if (!$this->car_model->insertOrderDetail($data)) {
         echo '下單失敗';
-        header('Refresh: 3 url=' . base_url('index.php/shop/index'));
+        header('Refresh: 3 url=' . base_url('shop/index'));
         return true;
       }
     }
     unset($_SESSION['car']);
     echo '下單成功！';
-    header('Refresh: 3 url=' . base_url('index.php/shop/index'));
+    header('Refresh: 3 url=' . base_url('shop/index'));
     return true;
   }
 }

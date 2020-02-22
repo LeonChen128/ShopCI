@@ -3,11 +3,11 @@
 <script src="<?= base_url('lib/shop_detail.js')?>"></script>
 
 <div class="header">
-  <a href="<?= base_url('index.php/shop/index')?>" class="headerWord">商品</a> 
-  <a href="<?= base_url('index.php/car/index')?>" class="headerWord">購物車</a>
-  <a href="<?= base_url('index.php/history/index')?>" class="headerUser">購買紀錄</a>       
-  <a href="<?= base_url('index.php/product/logout')?>" class="headerWord">登出</a> 
-  <a href="<?= base_url('index.php/myHome/index')?>" class="myProfileLink">
+  <a href="<?= base_url('shop/index')?>" class="headerWord">商品</a> 
+  <a href="<?= base_url('car/index')?>" class="headerWord">購物車</a>
+  <a href="<?= base_url('history/index')?>" class="headerUser">購買紀錄</a>       
+  <a href="<?= base_url('product/logout')?>" class="headerWord">登出</a> 
+  <a href="<?= base_url('myHome/index')?>" class="myProfileLink">
     <spanl class="myName"><?= $_SESSION['user']['name']?></spanl>
     <?php 
     if ($_SESSION['user']['path'] == '') { ?>
@@ -25,7 +25,7 @@
   <p class="detailWord">品名：<?= $query->name?></p>
   <p class="detailWord">價格：<?= $query->price?></p>
   <p class="detailWordPurche">購買數量：</p>
-  <form action="<?= base_url('index.php/car/insert')?>" method="post">
+  <form action="<?= base_url('car/insert')?>" method="post">
     <select name="count" class="countTable">
       <?php for ($i = 1; $i < 11; $i++) { ?>
       <option value="<?= $i?>"><?= $i?></option>
@@ -37,12 +37,12 @@
     <input type="hidden" name="path" value="<?= $query->path?>">
     <button type="submit" class="detailButton">加入購物車</button>
   </form>
-  <a href="<?= base_url('index.php/shop/index')?>" class="backHome">返回商品欄</a>
+  <a href="<?= base_url('shop/index')?>" class="backHome">返回商品欄</a>
 </div>
 
 <div class="messageTable">
   <div class="messageFrame">
-    <form action="<?= base_url('index.php/shop/doMessage')?>" method="post">
+    <form action="<?= base_url('shop/doMessage')?>" method="post">
       <input type="hidden" name="product_id" value="<?= $query->id?>">
       <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id']?>">
       <textarea name="message" class="messageInput" placeholder="輸入您的留言..." id="message"></textarea>

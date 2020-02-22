@@ -9,7 +9,7 @@ class Shop extends CI_Controller {
 
   public function index() {
     if (!isset($_SESSION['user'])) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
     if (isset($_POST['search'])) {
@@ -32,22 +32,22 @@ class Shop extends CI_Controller {
 
   public function detail() {
     if (!isset($_SESSION['user'])) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 
     if (!isset($_GET['id'])) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
 
     if (!is_numeric($_GET['id'])) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
         
     if (!$query = $this->shop_model->getProduct($_GET['id'])) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
     
@@ -61,12 +61,12 @@ class Shop extends CI_Controller {
 
   public function doMessage() {
     if (!isset($_SESSION['user'])) {
-      redirect(base_url('index.php/product/index'));
+      redirect(base_url('product/index'));
       return true;
     }
 
     if (!$this->input->post()) {
-      redirect(base_url('index.php/shop/index'));
+      redirect(base_url('shop/index'));
       return true;
     }
 
@@ -74,10 +74,10 @@ class Shop extends CI_Controller {
     
     if (!$this->shop_model->insertMessage($data)) {
       echo '留言失敗';
-      header('Refresh: 3 url=' . base_url('index.php/shop/detail?id=' . $data['product_id']));
+      header('Refresh: 3 url=' . base_url('shop/detail?id=' . $data['product_id']));
       return true;
     } else {
-      redirect(base_url('index.php/shop/detail?id=' . $data['product_id']));
+      redirect(base_url('shop/detail?id=' . $data['product_id']));
       return true;
     }
   }
