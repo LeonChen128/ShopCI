@@ -32,7 +32,7 @@ class Product extends CI_Controller {
 
   public function checkLogin() {
     if (!$this->input->post()) {
-      redirect(base_url('index.php/product/login'));
+      redirect(base_url('product/login'));
       return true;
     }
     $data = $this->input->post();
@@ -61,7 +61,7 @@ class Product extends CI_Controller {
 
   public function registerUser() {
     if (!$this->input->post()) {
-      redirect(base_url('index.php/product/register'));
+      redirect(base_url('product/register'));
       return true;
     }
 
@@ -72,31 +72,31 @@ class Product extends CI_Controller {
 
     if (mb_strlen($name) > 10) {
       echo '名字字數須小於10。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if (mb_strlen($account) > 12) {
       echo '帳號字數須小於12。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if (mb_strlen($password) > 12) {
       echo '密碼字數須小於12。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if ($name == '' || $account == '' || $password == '') {
       echo '欄位不可空白。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if ($password != $repassword) {
       echo '密碼確認錯誤。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
@@ -105,23 +105,23 @@ class Product extends CI_Controller {
 
     if ($this->product_model->checkExistedName($data['name'])) {
       echo '名稱已存在，請更換。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if ($this->product_model->checkExistedAccount($data['account'])) {
       echo '帳號已存在，請更換。';
-      header('Refresh:3 url=' . base_url('index.php/product/register'));
+      header('Refresh:3 url=' . base_url('product/register'));
       return true;
     }
 
     if ($this->product_model->insertUserData($data)) {
       echo '註冊成功！';
-      header('Refresh:3 url=' . base_url('index.php/product/login'));
+      header('Refresh:3 url=' . base_url('product/login'));
       return true;
     } else {
       echo '註冊失敗。';
-      header('Refresh:3 url=' . base_url('index.php/product/login'));
+      header('Refresh:3 url=' . base_url('product/login'));
       return true;
     }
   }
@@ -133,7 +133,17 @@ class Product extends CI_Controller {
 
   public function doLogout() {
     unset($_SESSION['user']);
-    redirect(base_url('index.php/product/index'));
+    redirect(base_url('product/index'));
+    return true;
+  }
+
+  public function ajaxCheckName() {
+    header('Content-Type: application/json; charset=UTF-8');
+    $query = $this->product_model->checkExistedNameReturnArray($_POST['name']);
+    $result = [
+      "name" => $query['name']
+    ];
+    echo json_encode($result);
     return true;
   }
 }

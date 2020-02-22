@@ -26,6 +26,13 @@ class product_model extends CI_Model {
     return $query->row();
   }
 
+  public function checkExistedNameReturnArray($name) {
+    $query = $this->db->get_where($this->table, [
+      'name' => $name
+    ]);
+    return $query->row_array();
+  }
+
   public function checkExistedAccount($account) {
     $query = $this->db->get_where($this->table, [
       'account' => $account
